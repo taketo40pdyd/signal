@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ページが見つかりません｜Signal</title>
+<style>
+  :root { color-scheme: light dark; --bg:#e9edf2; --ink:#171c2b; --sub:#566074; --blue:#2457d6; }
+  @media (prefers-color-scheme:dark) { :root { --bg:#0e1118; --ink:#e9ecf3; --sub:#9ca6ba; --blue:#8aaaff; } }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; background:var(--bg); color:var(--ink); font:16px/1.7 "Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif; text-align:center; }
+  b { display:block; font:700 64px/1 "Arial Narrow",sans-serif; color:var(--blue); letter-spacing:.06em; }
+  p { margin:12px 0 20px; color:var(--sub); }
+  a { display:inline-block; padding:12px 28px; border-radius:999px; background:var(--blue); color:#fff; font-weight:700; text-decoration:none; }
+</style>
+</head>
+<body>
+<main>
+  <b>404</b>
+  <p>お探しのページは見つかりませんでした。</p>
+  <a id="home" href="/">Signalに戻る</a>
+</main>
+<script>
+  /* プロジェクトサイト(https://ユーザー名.github.io/リポジトリ名/)では、先頭の階層がリポジトリ名 */
+  (function () {
+    var seg = location.pathname.split("/")[1];
+    if (/\.github\.io$/.test(location.hostname) && seg) document.getElementById("home").href = "/" + seg + "/";
+  })();
+</script>
+</body>
+</html>
